@@ -15,9 +15,11 @@ var detectNetwork = function(cardNumber) {
   // Once you've read this, go ahead and try to implement this function, then return to the console.
   if (cardNumber.substring(0, 2) === '38' || cardNumber.substring(0, 2) === '39' && cardNumber.length === 14) {
     return "Diner's Club";
-  } else if (cardNumber.substring(0, 2) === '34' || cardNumber.substring(0, 2) === '37' && cardNumber.length === 15){
+  } else if (cardNumber.substring(0, 2) === '34' || cardNumber.substring(0, 2) === '37' && cardNumber.length === 15) {
     return "American Express";
-  } else {
-    return "Invalid";
+  } else if (cardNumber.substring(0, 2) === '51' || cardNumber.substring(0, 2) === '52' || cardNumber.substring(0, 2) === '53' || cardNumber.substring(0, 2) === '54' || cardNumber.substring(0, 2) === '55' && cardNumber.length === 16) {
+    return "MasterCard";
+  } else if (cardNumber.substring(0, 1) === '4' && cardNumber.length === 13 || cardNumber.length === 16 || cardNumber.length === 19) {
+    return "Visa";
   }
 };
