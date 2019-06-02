@@ -391,7 +391,7 @@ describe('Switch', function() {
   });
 
   it('has a prefix of 564182 and a length of 18', function() {
-    expect(detectNetwork('5641823456789012')).to.equal('Switch');
+    expect(detectNetwork('564182123456789012')).to.equal('Switch');
   });
 
   it('has a prefix of 564182 and a length of 19', function() {
@@ -403,7 +403,7 @@ describe('Switch', function() {
   });
 
   it('has a prefix of 633110 and a length of 18', function() {
-    expect(detectNetwork('6331103456789012')).to.equal('Switch');
+    expect(detectNetwork('633110123456789012')).to.equal('Switch');
   });
 
   it('has a prefix of 633110 and a length of 19', function() {
