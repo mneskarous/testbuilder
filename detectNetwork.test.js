@@ -48,6 +48,7 @@ describe('Diner\'s Club', function() {
     if (detectNetwork('38345678901234') !== 'Diner\'s Club') {
       throw new Error('Test failed');
     }
+
   });
 
   it('has a prefix of 39 and a length of 14', function() {
@@ -133,17 +134,87 @@ describe('MasterCard', function() {
 
   it('has a prefix of 55 and a length of 16', function() {
     detectNetwork('5512345678901234').should.equal('MasterCard');
-  })
+  });
 
 });
 
 describe('Discover', function() {
   // Tests without a function will be marked as "pending" and not run
   // Implement these tests (and others) and make them pass!
-  it('has a prefix of 6011 and a length of 16');
-  it('has a prefix of 6011 and a length of 19');
+  var assert = function(isTrue) {
+    if(!isTrue) {
+      throw new Error('Test failed');
+    }
+  };
+
+  it('has a prefix of 6011 and a length of 16', function() {
+    detectNetwork('6011123456789012') === 'Discover';
+  });
+
+  it('has a prefix of 6011 and a length of 19', function() {
+    detectNetwork('6011123456789012345') === 'Discover';
+  });
+
+  it('has a prefix of 644 and a length of 16', function() {
+    detectNetwork('6441234567890123') === 'Discover';
+  });
+
+  it('has a prefix of 644 and a length of 19', function () {
+    detectNetwork('6441234567890123456') === 'Discover';
+  });
+
+  it('has a prefix of 645 and a length of 16', function () {
+    detectNetwork('6451234567890123') === 'Discover';
+  });
+
+  it('has a prefix of 645 and a length of 19', function () {
+    detectNetwork('6451234567890123456') === 'Discover';
+  });
+
+  it('has a prefix of 646 and a length of 16', function () {
+    detectNetwork('6461234567890123') === 'Discover';
+  });
+
+  it('has a prefix of 646 and a length of 19', function () {
+    detectNetwork('6461234567890123456') === 'Discover';
+  });
+
+  it('has a prefix of 647 and a length of 16', function () {
+    detectNetwork('6471234567890123') === 'Discover';
+  });
+
+  it('has a prefix of 647 and a length of 19', function () {
+    detectNetwork('6471234567890123456') === 'Discover';
+  });
+
+  it('has a prefix of 648 and a length of 16', function () {
+    detectNetwork('6481234567890123') === 'Discover';
+  });
+
+  it('has a prefix of 648 and a length of 19', function () {
+    detectNetwork('6481234567890123456') === 'Discover';
+  });
+
+  it('has a prefix of 649 and a length of 16', function () {
+    detectNetwork('6491234567890123') === 'Discover';
+  });
+
+  it('has a prefix of 649 and a length of 19', function () {
+    detectNetwork('6491234567890123456') === 'Discover';
+  });
+
+  it('has a prefix of 65 and a length of 16', function () {
+    detectNetwork('6512345678901234') === 'Discover';
+  });
+
+  it('has a prefix of 65 and a length of 19', function () {
+    detectNetwork('6512345678901234567') === 'Discover';
+  });
+
 });
 
 describe('Maestro', function() {
-  // Write full test coverage for the Maestro card
+  // var assert = chai.assert;
+
+  // it
 });
