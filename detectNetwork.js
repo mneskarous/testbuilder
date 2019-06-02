@@ -13,14 +13,14 @@ var detectNetwork = function(cardNumber) {
   // The American Express network always starts with a 34 or 37 and is 15 digits long
 
   // Once you've read this, go ahead and try to implement this function, then return to the console.
-  var prefixes = ['624', '625', '626', '6282', '6283', '6284', '6285', '6286', '6287', '6288'];
+  var chinaUnionPayPrefixes = ['624', '625', '626', '6282', '6283', '6284', '6285', '6286', '6287', '6288'];
   for (var i = 622126; i <= 622925; i++) {
-    prefixes.push(i.toString());
+    chinaUnionPayPrefixes.push(i.toString());
   }
 
   var match = false;
-  for (var i = 0; i < prefixes.length; i++) {
-    if (prefixes.indexOf(prefixes[i]) !== -1) {
+  for (var i = 0; i < chinaUnionPayPrefixes.length; i++) {
+    if (chinaUnionPayPrefixes.indexOf(chinaUnionPayPrefixes[i]) !== -1) {
       match = true;
     }
   }
