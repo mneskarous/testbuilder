@@ -1,4 +1,5 @@
 var detectNetwork = function(cardNumber) {
+
   var chinaUnionPayPrefixes = ['624', '625', '626', '6282', '6283', '6284', '6285', '6286', '6287', '6288'];
   for (var i = 622126; i <= 622925; i++) {
     chinaUnionPayPrefixes.push(i.toString());
