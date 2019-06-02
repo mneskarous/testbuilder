@@ -13,6 +13,15 @@ var detectNetwork = function(cardNumber) {
   // The American Express network always starts with a 34 or 37 and is 15 digits long
 
   // Once you've read this, go ahead and try to implement this function, then return to the console.
+  var prefixes = ['624', '625', '626', '6282', '6283', '6284', '6285', '6286', '6287', '6288'];
+
+  var match = false;
+  for (var i = 0; i < prefixes.length; i++) {
+    if (prefixes.indexOf(prefixes[i]) !== -1) {
+      match = true;
+    }
+  }
+
   if ((cardNumber.substring(0, 2) === '38' || cardNumber.substring(0, 2) === '39') && cardNumber.length === 14) {
     return 'Diner\'s Club';
   } else if ((cardNumber.substring(0, 2) === '34' || cardNumber.substring(0, 2) === '37') && cardNumber.length === 15) {
@@ -27,7 +36,7 @@ var detectNetwork = function(cardNumber) {
     return 'Discover';
   } else if ((cardNumber.substring(0, 4) === '5018' || cardNumber.substring(0, 4) === '5020' || cardNumber.substring(0, 4) === '5038' || cardNumber.substring(0, 4) === '6304') && (cardNumber.length === 12 || cardNumber.length === 13 || cardNumber.length === 14 || cardNumber.length === 15 || cardNumber.length === 16 || cardNumber.length === 17 || cardNumber.length === 18 || cardNumber.length === 19)) {
     return 'Maestro';
-  } else if () {
+  } else if (match && (cardNumber.length === 16 || cardNumber.length === 17 || cardNumber.length === 18 || cardNumber.length === 19)) {
     return 'China UnionPay';
   }
 };
