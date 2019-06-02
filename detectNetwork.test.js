@@ -347,24 +347,3 @@ describe('Maestro', function() {
   });
 
 });
-
-// describe('Visa', function() {
-//   // Chai is an entire library of helper functions for tests!
-//   // Chai provides an assert that acts the same as our previous assert.
-//   // Search the documentation to figure out how to access it.
-//   //   http://chaijs.com/
-//   var assert = chai.assert;
-
-//   it('has a prefix of 4 and a length of 13', function() {
-//     assert(detectNetwork('4123456789012') === 'Visa');
-//   });
-
-//   it('has a prefix of 4 and a length of 16', function() {
-//     assert(detectNetwork('4123456789012345') === 'Visa');
-//   });
-
-//   it('has a prefix of 4 and a length of 19', function() {
-//     assert(detectNetwork('4123456789012345678') === 'Visa');
-//   });
-
-// });
