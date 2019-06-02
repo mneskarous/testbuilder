@@ -1,48 +1,4 @@
-/*
- * You'll eventually be given instructions how to use this file
- * If you want to use it before then, you'll have to figure it out yourself
- */
-
-// You don't actually want to fill *this* value in on line 9, but you'll see
-// other places in this file where you'll replace the FILL_ME_IN with a
-// different value.
-// var FILL_ME_IN = 'Fill this value in';
-//
-// describe('Introduction to Mocha Tests - READ ME FIRST', function() {
-  // A Mocha test is just a function!
-  // If the function throws an error when run, it fails.
-  // If it doesn't throw an error when run, it doesn't fail.
-  // To read more about mocha, visit mochajs.org
-
-  // Once you've read and understood this section, please comment it out.
-  // You will not be able to proceed with a failing test.
-
-//   it('Throws an error so it fails', function() {
-//     throw new Error('Delete me!');
-//   });
-
-//   it('Doesn\'t throw an error, so it doesn\'t fail', function() {
-//     // This test doesn't really test anything at all! It will pass no matter what.
-//     var even = function(num){
-//       return num/2 === 0;
-//     }
-//     return even(10) === true;
-//   });
-
-//   // In tests, we want to compare the expected behavior to the actual behavior.
-//   // A test should only fail if the expected behavior doesn't match the actual.
-//   it('Throws an error when expected behavior does not match actual behavior', function() {
-//     var even = function(num){
-//       return num/2 === 0;
-//     }
-
-//     if(even(10) !== true) {
-//       throw new Error('10 should be even!');
-//     }
-//   });
-// });
 describe('Diner\'s Club', function() {
-  // Be careful, tests can have bugs too...
 
   it('has a prefix of 38 and a length of 14', function() {
     if (detectNetwork('38945678901234') !== 'Diner\'s Club') {
@@ -59,8 +15,7 @@ describe('Diner\'s Club', function() {
 });
 
 describe('American Express', function() {
-  // It can get annoying to keep typing the if/throw, so here is a
-  // helper function to throw an error if the input statement isn't true.
+
   var assert = function(isTrue) {
     if(!isTrue) {
       throw new Error('Test failed');
@@ -78,10 +33,7 @@ describe('American Express', function() {
 });
 
 describe('Visa', function() {
-  // Chai is an entire library of helper functions for tests!
-  // Chai provides an assert that acts the same as our previous assert.
-  // Search the documentation to figure out how to access it.
-  //   http://chaijs.com/
+
   var assert = chai.assert;
 
   it('has a prefix of 4 and a length of 13', function() {
@@ -99,10 +51,7 @@ describe('Visa', function() {
 });
 
 describe('MasterCard', function() {
-  // Chai lets you write more human-readable tests that throw helpful errors.
-  // Expect syntax is one way to do this, but there are others.
-  // If you want to know more, check out the documentation.
-  //   http://chaijs.com/api/bdd/
+
   var expect = chai.expect;
 
   for (var prefix = 51; prefix <= 55; prefix++) {  (function(prefix) {
@@ -113,17 +62,8 @@ describe('MasterCard', function() {
 });
 
 describe('Discover', function() {
-  // Tests without a function will be marked as "pending" and not run
-  // Implement these tests (and others) and make them pass!
+
   var expect = chai.expect;
-
-  it('has a prefix of 6011 and a length of 16', function() {
-    expect(detectNetwork('6011123456789012')).to.equal('Discover');
-  });
-
-  it('has a prefix of 6011 and a length of 19', function() {
-    expect(detectNetwork('6011123456789012345')).to.equal('Discover');
-  });
 
   for (var prefix = 644; prefix <= 649; prefix++) {  (function(prefix) {
     it('has a prefix of ' + prefix + ' and a length of 16', function() {
@@ -133,6 +73,14 @@ describe('Discover', function() {
     it('has a prefix of ' + prefix + ' and a length of 19', function() {
       expect(detectNetwork(prefix + '1234567890123456')).to.equal('Discover');
     });  })(prefix)}
+
+  it('has a prefix of 6011 and a length of 16', function() {
+    expect(detectNetwork('6011123456789012')).to.equal('Discover');
+  });
+
+  it('has a prefix of 6011 and a length of 19', function() {
+    expect(detectNetwork('6011123456789012345')).to.equal('Discover');
+  });
 
   it('has a prefix of 65 and a length of 16', function () {
     expect(detectNetwork('6512345678901234')).to.equal('Discover');
@@ -278,8 +226,7 @@ describe('Maestro', function() {
 });
 
 describe('China UnionPay', function() {
-//   // Tests without a function will be marked as "pending" and not run
-//   // Implement these tests (and others) and make them pass!
+
   var expect = chai.expect;
 
   for (var prefix = 622126; prefix <= 622925; prefix++) {  (function(prefix) {
