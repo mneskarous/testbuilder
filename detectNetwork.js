@@ -13,13 +13,17 @@ var detectNetwork = function(cardNumber) {
   // The American Express network always starts with a 34 or 37 and is 15 digits long
 
   // Once you've read this, go ahead and try to implement this function, then return to the console.
-  if (cardNumber.substring(0, 2) === '38' || cardNumber.substring(0, 2) === '39' && cardNumber.length === 14) {
+  if ((cardNumber.substring(0, 2) === '38' || cardNumber.substring(0, 2) === '39') && cardNumber.length === 14) {
     return "Diner's Club";
-  } else if (cardNumber.substring(0, 2) === '34' || cardNumber.substring(0, 2) === '37' && cardNumber.length === 15) {
+  } else if ((cardNumber.substring(0, 2) === '34' || cardNumber.substring(0, 2) === '37') && cardNumber.length === 15) {
     return "American Express";
-  } else if (cardNumber.substring(0, 2) === '51' || cardNumber.substring(0, 2) === '52' || cardNumber.substring(0, 2) === '53' || cardNumber.substring(0, 2) === '54' || cardNumber.substring(0, 2) === '55' && cardNumber.length === 16) {
-    return "MasterCard";
-  } else if (cardNumber.substring(0, 1) === '4' && cardNumber.length === 13 || cardNumber.length === 16 || cardNumber.length === 19) {
+  } else if (cardNumber.substring(0, 1) === '4' && (cardNumber.length === 13 || cardNumber.length === 16 || cardNumber.length === 19)) {
     return "Visa";
+  } else if ((cardNumber.substring(0, 2) === '51' || cardNumber.substring(0, 2) === '52' || cardNumber.substring(0, 2) === '53' || cardNumber.substring(0, 2) === '54' || cardNumber.substring(0, 2) === '55') && cardNumber.length === 16) {
+    return "MasterCard";
+  } else if ((cardNumber.substring(0, 4) === '6011' || cardNumber.substring(0, 3) === '644' || cardNumber.substring(0, 3) === '645' || cardNumber.substring(0, 3) === '646'  || cardNumber.substring(0, 3) === '647' || cardNumber.substring(0, 3) === '648' || cardNumber.substring(0, 3) === '649'  || cardNumber.substring(0, 2) === '65') && (cardNumber.length === 16 || cardNumber.length === 19)) {
+    return "Discover";
+  } else if ((cardNumber.substring(0, 4) === '5018' || cardNumber.substring(0, 4) === '5020' || cardNumber.substring(0, 4) === '5038' || cardNumber.substring(0, 4) === '6304') && (cardNumber.length === 12 || cardNumber.length === 13 || cardNumber.length === 14 || cardNumber.length === 15 || cardNumber.length === 16 || cardNumber.length === 17 || cardNumber.length === 18 || cardNumber.length === 19)) {
+    return "Maestro";
   }
 };
